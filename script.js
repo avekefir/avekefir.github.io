@@ -14,7 +14,6 @@ const search = document.querySelector('.weather__header-search');
 const setQuery = ((event) => {
   if (event.keyCode == 13) {
     getResults(search.value);
-    hideKeyboard(search)
   }
 })
 
@@ -72,16 +71,6 @@ const displayResults = ((weather) => {
 })
 search.addEventListener('keypress', setQuery);
 
-function hideKeyboard(element) {
-  element.attr('readonly', 'readonly'); // Force keyboard to hide on input field.
-  element.attr('disabled', 'true'); // Force keyboard to hide on textarea field.
-  setTimeout(function() {
-      element.blur();  //actually close the keyboard
-      // Remove readonly attribute after keyboard is hidden.
-      element.removeAttr('readonly');
-      element.removeAttr('disabled');
-  }, 100);
-}
 
 function dateBuilder(d){
   let months = ["January", "February", "March", "April", "May", "June", 
