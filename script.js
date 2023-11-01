@@ -28,6 +28,11 @@ const getResults = ((query) => {
     .then((weather)=>{
       displayResults(weather)
       document.querySelector('.gif').remove()
+      search.value = ""
+    })
+    .catch((err) => {
+      search.value = "This city doesn't exist"
+      document.querySelector('.gif').remove()
     })
 })
 
