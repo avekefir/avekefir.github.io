@@ -35,9 +35,12 @@ const getResults = ((query) => {
       document.querySelector('.message').remove();
     })
     .catch((err) => {
-      city_not_exist.innerText = `City '${search.value}' doesn't exist`;
-      search.value = "";
-      document.querySelector('.weather__header').append(city_not_exist);
+      if (search.value !== ''){
+        city_not_exist.innerText = `City '${search.value}' doesn't exist`;
+        search.value = "";
+        document.querySelector('.weather__header').append(city_not_exist);
+      }
+
       document.querySelector('.gif').remove();
     })
 })
