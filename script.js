@@ -16,23 +16,29 @@ const setQuery = ((event) => {
     getResults(search.value);
   }
 })
+
 const gif = document.createElement('img');
 gif.className = 'gif';
 gif.src = 'loading-loader.gif';
 gif.width = 70;
 
+const city_not_exist = document.createElement('div')
+city_not_exist.className = 'message';
 const getResults = ((query) => {
-  document.querySelector('.weather__header').append(gif)
+  document.querySelector('.weather__header').append(gif);
   fetch(`${api.baseurl}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then(weather => { return weather.json(); })
     .then((weather)=>{
-      displayResults(weather)
-      document.querySelector('.gif').remove()
-      search.value = ""
+      displayResults(weather);
+      document.querySelector('.gif').remove();
+      search.value = "";
+      document.querySelector('.message').remove();
     })
     .catch((err) => {
-      search.value = "This city doesn't exist"
-      document.querySelector('.gif').remove()
+      city_not_exist.innerText = `City '${search.value}' doesn't exist`;
+      search.value = "";
+      document.querySelector('.weather__header').append(city_not_exist);
+      document.querySelector('.gif').remove();
     })
 })
 
