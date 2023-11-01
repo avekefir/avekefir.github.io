@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-family: Comic Sans MS, Comic Sans, Arial, Helvetica, sans-serif,cursive;
   background-image: url(miami.jpg);
   background-size: cover;
   background-position: top center;
