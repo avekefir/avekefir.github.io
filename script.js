@@ -10,11 +10,19 @@ const setQuery = ((event) => {
     getResults(search.value);
   }
 })
+const gif = document.createElement('img');
+gif.className = 'gif';
+gif.src = 'loading-loader.gif';
+gif.width = 70;
 
 const getResults = ((query) => {
+  document.querySelector('.weather__header').append(gif)
   fetch(`${api.baseurl}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then(weather => { return weather.json(); })
-    .then(displayResults);
+    .then((weather)=>{
+      displayResults(weather)
+      document.querySelector('.gif').remove()
+    })
 })
 
 const displayResults = ((weather) => {

@@ -21,7 +21,9 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  flex-direction: column;
 }
 
 .weather__header-search{
