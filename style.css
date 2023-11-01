@@ -1,23 +1,28 @@
-*{
-  margin: 0;padding: 0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: Comic Sans MS, Comic Sans, cursive;
   background-image: url(miami.jpg);
   background-size: cover;
   background-position: top center;
 }
 
-.weather{
+.weather {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.6)
+  );
 }
 
-.weather__header{
+.weather__header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,13 +31,12 @@ body{
   flex-direction: column;
 }
 
-.weather__header-search{
-  
+.weather__header-search {
   width: 100%;
   max-width: 280px;
   padding: 10px 15px;
   border: none;
-  background-color: rgba(255,255,255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 16px 0;
   border-bottom: 3px rgb(178, 125, 228) solid;
 
@@ -42,13 +46,15 @@ body{
   transition: 0.2s ease-out;
 }
 
-input::-webkit-input-placeholder { color: rgb(228, 228, 228); }
-
-.weather__header-search:focus{
-  background-color: rgba(255,255,255, 0.5);
+input::-webkit-input-placeholder {
+  color: rgb(228, 228, 228);
 }
 
-.weather__main{
+.weather__header-search:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.weather__main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,38 +62,38 @@ input::-webkit-input-placeholder { color: rgb(228, 228, 228); }
   padding: 25px 50px;
 }
 
-.weather__main-location-city{
+.weather__main-location-city {
   color: azure;
   font-size: 32px;
   font-weight: 500;
   margin-bottom: 5px;
 }
 
-.weather__main-location-date{
-  color:azure;
+.weather__main-location-date {
+  color: azure;
   font-size: 16px;
 }
 
-.weather__main-info-temp{
-  color:azure;
+.weather__main-info-temp {
+  color: azure;
   font-size: 102px;
   font-weight: 900;
   margin: 30px 0;
-  text-shadow: 4px 10px rgba(0,0,0,0.6);
+  text-shadow: 4px 10px rgba(0, 0, 0, 0.6);
 }
 
-.weather__main-info-weather{
-  color:azure;
+.weather__main-info-weather {
+  color: azure;
   font-size: 32px;
   font-weight: 700;
   font-style: italic;
   margin-bottom: 15px;
-  text-shadow: 0px 3px rgba(0,0,0,0.4);
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.4);
 }
 
-.weather__main-info-hi-low{
-  color:azure;
+.weather__main-info-hi-low {
+  color: azure;
   font-size: 24px;
   font-weight: 500;
-  text-shadow: 0px 4px rgba(0,0,0,0.4);
+  text-shadow: 0px 4px rgba(0, 0, 0, 0.4);
 }

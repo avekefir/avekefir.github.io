@@ -2,7 +2,13 @@ const api = {
   key: "f8434dffb8f56a03b56ef99f44a6f862",
   baseurl: "https://api.openweathermap.org/data/2.5/"
 }
-
+if (localStorage.length > 3){
+  document.querySelector('.weather__main-location-city').innerText = `${localStorage.getItem('city')}, ${localStorage.getItem('country')}`;
+  document.querySelector('.weather__main-location-date').innerText = localStorage.getItem('date');
+  document.querySelector('.weather__main-info-temp').innerText = localStorage.getItem('temperature');
+  document.querySelector('.weather__main-info-weather').innerText = localStorage.getItem('weather');
+  document.querySelector('.weather__main-info-hi-low').innerText = localStorage.getItem('hi-low');
+}
 const search = document.querySelector('.weather__header-search');
 
 const setQuery = ((event) => {
@@ -45,7 +51,7 @@ const displayResults = ((weather) => {
   localStorage.setItem('city', weather.name);
   localStorage.setItem('country', weather.sys.country);
   localStorage.setItem('date', dateBuilder(now));
-  localStorage.setItem('temperature', Math.round(weather.main.temp));
+  localStorage.setItem('temperature', `${Math.round(weather.main.temp)}°c`);
   localStorage.setItem('weather', weather.weather[0].main);
   localStorage.setItem('hi-low', `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`)
 })
