@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather</title>
-  <link rel="icon" href="weather.png">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="weather">
-    <div class="weather__header">
-      <input class="weather__header-search" type="text" autocomplete="off" 
-      placeholder="Search for a city...">
-    </div>
-    <div class="weather__main">
-      <section class="weather__main-location">
-        <div class="weather__main-location-city">
-          Kazan
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="icon" href="weather.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="weather">
+      <div class="weather__header">
+        <div class="weather__header-input">
+          <input
+          class="weather__header-input-search"
+          type="text"
+          autocomplete="off"
+          placeholder="Search for a city..."
+          />
+          <!-- <button class="weather__header-input-button">→</button> -->
         </div>
-        <div class="weather__main-location-date">
-          Tuesday 31 October 2023
+      </div>
+      <div class="weather__main">
+        <section class="weather__main-location">
+          <div class="weather__main-location-city">Kazan</div>
+          <div class="weather__main-location-date">Tuesday 31 October 2023</div>
+        </section>
+        <div class="weather__main-info">
+          <div class="weather__main-info-temp">1°c</div>
+          <div class="weather__main-info-weather">Cloudy</div>
+          <div class="weather__main-info-hi-low">-3°c / 2°c</div>
         </div>
-      </section>
-      <div class="weather__main-info">
-        <div class="weather__main-info-temp">1°c</div>
-        <div class="weather__main-info-weather">Cloudy</div>
-        <div class="weather__main-info-hi-low">-3°c / 2°c</div>
       </div>
     </div>
-  </div>
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
