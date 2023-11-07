@@ -10,3 +10,12 @@ export function getClouds() {
 
   return [cloud1, cloud2];
 }
+
+export function getRain(){
+  const rain = document.createElement("img");
+  rain.id = "weather_visibility";
+  rain.className = "weather__header-rain";
+  rain.src = "rain.gif";
+  
+  return rain;
+}

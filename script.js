@@ -4,14 +4,6 @@ const api = {
   key: "f8434dffb8f56a03b56ef99f44a6f862",
   baseurl: "https://api.openweathermap.org/data/2.5/",
 };
-// const cloud1 = document.createElement("img");
-// cloud1.id = "weather_visibility";
-// cloud1.className = "weather__header-clouds";
-// cloud1.src = "Clouds.png";
-// const cloud2 = document.createElement("img");
-// cloud2.id = "weather_visibility";
-// cloud2.className = "weather__header-clouds-2";
-// cloud2.src = "Clouds.png";
 
 if (localStorage.length > 3) {
   document.querySelector(
@@ -27,11 +19,13 @@ if (localStorage.length > 3) {
     localStorage.getItem("weather");
   document.querySelector(".weather__main-info-hi-low").innerText =
     localStorage.getItem("hi-low");
-
+    
+    
   if (localStorage.getItem("weather") === "Clouds") {
     document.querySelector(".weather__header").prepend(getClouds()[0]);
     document.querySelector(".weather__header").prepend(getClouds()[1]);
   }
+  
 }
 const search = document.querySelector(".weather__header-input-search");
 // const button = document.querySelector(".weather__header-input-button");
