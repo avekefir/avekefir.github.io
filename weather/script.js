@@ -75,7 +75,7 @@ const getResults = (query) => {
       }
       if (weather.weather[0].main === "Snow"){
         document.querySelector(".weather").prepend(getSnow());
-      }
+      } 
       document.querySelector(".gif").remove();
       search.value = "";
       document.querySelector(".message").remove();

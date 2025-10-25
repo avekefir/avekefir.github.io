@@ -32,6 +32,6 @@ export function getSnow(){
   snow.id = "weather_visibility";
   snow.className = "weather__header-snow";
   snow.src = "snow2.gif";
-  
+   
   return snow;
 }
