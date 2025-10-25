@@ -1,6 +1,7 @@
 import { getClouds } from "./consts.js";
 import { getRain } from "./consts.js";
 import { getClear } from "./consts.js";
+import { getSnow } from "./consts.js";
 
 const api = {
   key: "f8434dffb8f56a03b56ef99f44a6f862",
@@ -33,7 +34,9 @@ if (localStorage.length > 3) {
   if (localStorage.getItem("weather") === "Clear"){
     document.querySelector(".weather").prepend(getClear());
   }
-  
+  if (localStorage.getItem("weather") === "Snow"){
+    document.querySelector(".weather").prepend(getSnow());
+  }
 }
 const search = document.querySelector(".weather__header-input-search");
 // const button = document.querySelector(".weather__header-input-button");
@@ -69,6 +72,9 @@ const getResults = (query) => {
       }
       if (weather.weather[0].main === "Clear"){
         document.querySelector(".weather").prepend(getClear());
+      }
+      if (weather.weather[0].main === "Snow"){
+        document.querySelector(".weather").prepend(getSnow());
       }
       document.querySelector(".gif").remove();
       search.value = "";

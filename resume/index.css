@@ -1,60 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #1a1a2e;
+    font-family: "Press Start 2P", cursive; /* Пиксельный шрифт */
+    font-size: 14px; /* Шрифт маленький, как в играх */
+    line-height: 1.6;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Создаём пиксельный фон */
+.pixel-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a2e;
+    background-image: 
+        linear-gradient(rgba(0, 255, 157, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 157, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
+}
+
 .resume {
-    background: #efffd3;
-    font-family: Comic Sans MS, Comic Sans, cursive;
-    font-size: 30px;
+    background: rgba(34, 34, 59, 0.9);
+    border: 4px solid #00ff9d;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 20px #00ff9d;
 }
+
 .resume__header{
-    padding: 12px;
-    margin: 0px 24px;
-    background: #91c531;
-    border-radius: 10px;
-    color: #efffd3;
+    padding: 20px;
+    margin: 10px;
+    background: rgba(0, 255, 157, 0.2);
+    border: 2px solid #00ff9d;
+    color: #00ff9d;
     display: flex;
     justify-content: space-around;
 }
-.resume__header-info-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.resume__header-image-section img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid #ff0000; /* Толстая красная граница */
+    box-shadow: 
+        inset 0 0 10px #ff0000, /* Свечение внутрь от красного */
+        0 0 15px #ff0000,       /* Ближнее красное свечение */
+        0 0 30px #00ff00,       /* Зелёное свечение дальше */
+        0 0 45px #00ff00,
+        0 0 60px #00ff00;
+    transition: all 0.3s ease;
 }
+
+.resume__header-image-section img:hover {
+    transform: scale(1.05);
+    border: 2px solid #ff0000;
+    box-shadow: 
+        inset 0 0 15px #ff0000,
+        0 0 20px #ff0000,
+        0 0 40px #00ff00,
+        0 0 55px #00ff00,
+        0 0 70px #00ff00;
+}
+
+
+
 .resume__main{
-    padding: 12px;
-    margin: 12px 24px;
-    background: #2ccc5c;
-    color: #efffd3;
-    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    background: rgba(0, 255, 157, 0.1);
+    border: 2px solid #00ff9d;
+    color: #fff;
 }
-.resume__main-info{
-    display: flex;
-    justify-content: space-between;
-}
-.resume__main-skills{
-    display: flex;
-    justify-content: space-around;
-}
-.resume__main-level-of-english{
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-}
+
 .resume__footer{
     display: flex;  
     flex-direction: column;
     align-items: center;
-    padding: 12px;
-    margin: 12px 24px;
-    border-radius: 10px;
-    color: #efffd3;
-    background: #05af1c;
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid #00ff9d;
+    color: #00ff9d;
+    background: rgba(0, 255, 157, 0.2);
 }
-.resume__footer-contacts{
+
+/* Стиль для списков как в инвентаре игры */
+.resume__main-skills ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resume__main-skills li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.resume__main-skills li::before {
+    content: ">";
+    color: #00ff9d;
+    position: absolute;
+    left: 0;
+}
+.resume__header-info-section {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    height: 100%; /* Добавляем высоту для выравнивания */
 }
-p{
-    font-size: 20px;
-    margin: 12px;
+
+.resume__header-link-section {
+    display: flex;
+    gap: 15px; /* Расстояние между иконками */
+    justify-content: flex-start; /* Выравниваем по левому краю */
+    margin-top: auto; /* Прижимаем к низу */
+    padding-top: 20px; /* Отступ сверху */
 }
-*{
-    margin: 0;padding: 0;
+.resume__header-link {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.resume__header-link img {
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.resume__header-link:hover {
+    transform: scale(1.2); /* Увеличение при наведении */
+}
+
+.resume__header-link:hover img {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+/* Анимация мигания для заголовков */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+h1, h3 {
+    animation: blink 2s infinite;
+}
+
+
+
+/* Основной текст */
+p, li {
+    color: #ffffff;
+    text-shadow: 
+        1px 1px 0 red;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px;
+    margin: 6px 0;
+    border-left: 3px solid #ff0000;
+    transition: all 0.3s ease;
+}
+
+/* Заголовки */
+.resume__header-title {
+    color: #ffffff;
+    text-shadow: 
+        2px 2px 0 #000000,
+        4px 4px 0 #ff0000,
+        6px 6px 0 #00ff9d;
+    animation: blink 2s infinite;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border: 2px solid #00ff9d;
+}
+
+/* Подзаголовки */
+.resume__main h3 {
+    color: #00ff9d;
+    text-shadow: 
+        1px 1px 0 #ffffff,
+        2px 2px 0 #000000;
+    border-bottom: 2px solid #ff0000;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+.resume__footer-contacts p {
+    color: #ffffff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.resume__footer-contacts p:hover {
+    color: #00ff9d;
+    text-shadow: 
+        0 0 10px #00ff9d,
+        0 0 20px #00ff9d;
+    transform: scale(1.1);
 }

@@ -27,3 +27,11 @@ export function getClear(){
   
   return blik;
 }
+export function getSnow(){
+  const snow = document.createElement("img");
+  snow.id = "weather_visibility";
+  snow.className = "weather__header-snow";
+  snow.src = "snow2.gif";
+  
+  return snow;
+}
