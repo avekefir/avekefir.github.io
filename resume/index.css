@@ -1,0 +1,60 @@
+.resume {
+    background: #efffd3;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 30px;
+}
+.resume__header{
+    padding: 12px;
+    margin: 0px 24px;
+    background: #91c531;
+    border-radius: 10px;
+    color: #efffd3;
+    display: flex;
+    justify-content: space-around;
+}
+.resume__header-info-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.resume__main{
+    padding: 12px;
+    margin: 12px 24px;
+    background: #2ccc5c;
+    color: #efffd3;
+    border-radius: 10px;
+}
+.resume__main-info{
+    display: flex;
+    justify-content: space-between;
+}
+.resume__main-skills{
+    display: flex;
+    justify-content: space-around;
+}
+.resume__main-level-of-english{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.resume__footer{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    margin: 12px 24px;
+    border-radius: 10px;
+    color: #efffd3;
+    background: #05af1c;
+}
+.resume__footer-contacts{
+    display: flex;
+    justify-content: space-between;
+}
+p{
+    font-size: 20px;
+    margin: 12px;
+}
+*{
+    margin: 0;padding: 0;
+}
