@@ -19,3 +19,11 @@ export function getRain(){
   
   return rain;
 }
+export function getClear(){
+  const blik = document.createElement("img");
+  blik.id = "weather_visibility";
+  blik.className = "weather__header-blik";
+  blik.src = "blik.png";
+  
+  return blik;
+}

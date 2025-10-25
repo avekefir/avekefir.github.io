@@ -1,4 +1,6 @@
 import { getClouds } from "./consts.js";
+import { getRain } from "./consts.js";
+import { getClear } from "./consts.js";
 
 const api = {
   key: "f8434dffb8f56a03b56ef99f44a6f862",
@@ -24,6 +26,12 @@ if (localStorage.length > 3) {
   if (localStorage.getItem("weather") === "Clouds") {
     document.querySelector(".weather__header").prepend(getClouds()[0]);
     document.querySelector(".weather__header").prepend(getClouds()[1]);
+  }
+  if (localStorage.getItem("weather") === "Rain"){
+    document.querySelector(".weather").prepend(getRain());
+  }
+  if (localStorage.getItem("weather") === "Clear"){
+    document.querySelector(".weather").prepend(getClear());
   }
   
 }
@@ -56,9 +64,16 @@ const getResults = (query) => {
         document.querySelector(".weather__header").prepend(getClouds()[0]);
         document.querySelector(".weather__header").prepend(getClouds()[1]);
       }
+      if (weather.weather[0].main === "Rain"){
+        document.querySelector(".weather").prepend(getRain());
+      }
+      if (weather.weather[0].main === "Clear"){
+        document.querySelector(".weather").prepend(getClear());
+      }
       document.querySelector(".gif").remove();
       search.value = "";
       document.querySelector(".message").remove();
+      
     })
     .catch((err) => {
       if (search.value !== "") {
@@ -87,6 +102,9 @@ const displayResults = (weather) => {
   console.log(weather.weather[0].main);
   if (weather.weather[0].main === "Clouds") {
     console.log("yep");
+  }
+  if (weather.weather[0].main === "Rain") {
+    console.log("yeeeeeep");
   }
 
   let hilow = document.querySelector(".weather__main-info-hi-low");
