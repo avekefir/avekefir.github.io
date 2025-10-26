@@ -35,3 +35,11 @@ export function getSnow(){
    
   return snow;
 }
+export function getFog(){
+  const fog = document.createElement("img");
+  fog.id = "weather_visibility";
+  fog.className = "weather__header-fog";
+  fog.src = "fog.gif";
+
+  return fog;
+}

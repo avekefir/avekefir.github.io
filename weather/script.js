@@ -2,6 +2,7 @@ import { getClouds } from "./consts.js";
 import { getRain } from "./consts.js";
 import { getClear } from "./consts.js";
 import { getSnow } from "./consts.js";
+import { getFog } from "./consts.js";
 
 const api = {
   key: "f8434dffb8f56a03b56ef99f44a6f862",
@@ -37,6 +38,12 @@ if (localStorage.length > 3) {
   if (localStorage.getItem("weather") === "Snow"){
     document.querySelector(".weather").prepend(getSnow());
   }
+  if (localStorage.getItem("weather") === "Fog"){
+    document.querySelector(".weather").prepend(getFog());
+  }
+  if (localStorage.getItem("weather") === "Mist"){
+    document.querySelector(".weather").prepend(getFog());
+  }
 }
 const search = document.querySelector(".weather__header-input-search");
 // const button = document.querySelector(".weather__header-input-button");
@@ -67,15 +74,21 @@ const getResults = (query) => {
         document.querySelector(".weather__header").prepend(getClouds()[0]);
         document.querySelector(".weather__header").prepend(getClouds()[1]);
       }
-      if (weather.weather[0].main === "Rain"){
+      else if (weather.weather[0].main === "Rain"){
         document.querySelector(".weather").prepend(getRain());
       }
-      if (weather.weather[0].main === "Clear"){
+      else if (weather.weather[0].main === "Clear"){
         document.querySelector(".weather").prepend(getClear());
       }
-      if (weather.weather[0].main === "Snow"){
+      else if (weather.weather[0].main === "Snow"){
         document.querySelector(".weather").prepend(getSnow());
       } 
+      else if (weather.weather[0].main === "Fog"){
+        document.querySelector(".weather").prepend(getFog());
+      }
+      else if (weather.weather[0].main === "Mist"){
+        document.querySelector(".weather").prepend(getFog());
+      }
       document.querySelector(".gif").remove();
       search.value = "";
       document.querySelector(".message").remove();
@@ -83,7 +96,7 @@ const getResults = (query) => {
     })
     .catch((err) => {
       if (search.value !== "") {
-        city_not_exist.innerText = `City '${search.value}' doesn't exist`;
+        city_not_exist.innerText = `City '${search.value}' doesn't exist or openweather API has broken`;
         search.value = "";
         document.querySelector(".weather__header").append(city_not_exist);
       }
